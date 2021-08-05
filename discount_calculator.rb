@@ -19,7 +19,7 @@ else
   bill["milk"] = count["milk"] * amount["milk"]
 end
 #creating the bill amount for milk including the discount amount(if any).
-p bill["milk"]
+
 if count["bread"] >= 3
   extra = count["bread"] - 3
   bill["bread"] = dis_amount["bread"] + (extra * amount["bread"])
@@ -40,17 +40,17 @@ amount = bill["milk"] + bill["bread"] + bill["banana"] + bill["apple"]
 
 amount_saved = saved_on_milk + saved_on_bread
 
-  p "Items      Quantity      Amount"
-  p "-" * 50
+  puts "Items\t Quantity\t Amount"
+  puts "-" * 50
 #printing the titles
 
 a.uniq.each do |item| 
 
   if count[item] >0
-    p "#{item}    " + "-" + "#{count[item]}" + "----$" + "#{bill[item].round(2)}  "
+    puts "#{item}\t #{count[item]}\t\t $#{bill[item].round(2)}"
   end
 
 end
 
-p "Total amount :           $#{amount} "
-p "Amount saved:            $#{amount_saved.round(2)}"
+puts "Total amount : $#{amount}"
+puts "Amount saved: $#{amount_saved.round(2)}"
